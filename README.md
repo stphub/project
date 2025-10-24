@@ -18,9 +18,9 @@ void setup() {
 
   // ตรวจสอบการเชื่อมต่อ MPU6050
   if (mpu.testConnection()) {
-    Serial.println("✅ MPU6050 Connected!");
+    Serial.println(" MPU6050 Connected!");
   } else {
-    Serial.println("❌ MPU6050 Connection Failed!");
+    Serial.println(" MPU6050 Connection Failed!");
     while (1); // หยุดโปรแกรมถ้า MPU ไม่เชื่อมต่อ
   }
 }
@@ -40,7 +40,7 @@ void loop() {
   int speed = map(totalVibration, 10000, 40000, 0, 255);
   speed = constrain(speed, 0, 255);
 
-  // ✅ ควบคุมมอเตอร์ 2 ตัว
+  //  ควบคุมมอเตอร์ 2 ตัว
   analogWrite(motor1, speed);        // มอเตอร์ตัวที่ 1 ทำงานตามแรงสั่น
   analogWrite(motor2, 255 - speed);  // มอเตอร์ตัวที่ 2 สลับแรงกัน
 
